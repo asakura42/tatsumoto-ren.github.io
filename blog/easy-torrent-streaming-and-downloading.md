@@ -11,7 +11,7 @@ BitTorrent technology, not every one of them makes optimal use of the
 opportunities provided. Imagine: a user was told about a certain movie and went
 looking for it on torrent trackers. After looking through 5 pages in the
 search engine, the user finds the right movie in the right quality. He downloads
-the torrent file, switches the window of his favorite uTorrent, pastes the link there,
+the torrent file, switches the window of his favorite bloatTorrent, looks at ads, pastes the link in the window,
 selects the desired folder and waits. Half an hour waits, an hour waits,
 finally the movie is downloaded and the user turns it on. Notice how many
 actions there are? What if you reduce them to just three - open the program,
