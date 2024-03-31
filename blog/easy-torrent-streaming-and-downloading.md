@@ -6,54 +6,49 @@ filename: easy-torrent-streaming-and-downloading
 author: asakura42
 ---
 
-In the digital age, the quest for efficient, streamlined access to media and
-educational content has led to a plethora of solutions, each offering its unique
-blend of features and capabilities. Amidst this landscape, the power duo of
-Jackett and btstrm emerges as a beacon for users seeking a seamless integration
-of torrent search capabilities with direct streaming functionality, particularly
-those embarking on the journey of language learning. This article delves into
-the intricacies of utilizing Jackett in conjunction with btstrm, unveiling how
-this combination not only simplifies the process of finding and streaming
-torrents but also significantly enhances the learning experience for language
-enthusiasts. Through a detailed comparison with other available options, we'll
-explore why Jackett and btstrm stand out as the premier choice for users who
-prioritize ease, efficiency, and the integration of language-learning tools in
-their quest for media consumption. Welcome to the ultimate guide to mastering
-the art of torrent search and streaming with Jackett and btstrm, where
-simplicity meets sophistication in the service of learning and entertainment.
+Despite the fact that many modern operating system users are aware of
+BitTorrent technology, not every one of them makes optimal use of the
+opportunities provided. Imagine: a user was told about a certain movie and went
+looking for it on torrent trackers. After looking through 5 pages in the
+search engine, the user finds the right movie in the right quality. He downloads
+the torrent file, switches the window of his favorite uTorrent, pastes the link there,
+selects the desired folder and waits. Half an hour waits, an hour waits,
+finally the movie is downloaded and the user turns it on. Notice how many
+actions there are? What if you reduce them to just three - open the program,
+enter the title, press Enter. This article is dedicated to exactly that -
+simplifying the work with torrents with the help of the `Jackett` aggregator, the
+open source torrent client `qBittorrent` and the program for directly streaming
+torrents - `btstrm`.
 
 ## Installing Jackett
 
-Jackett stands as a pivotal open-source torrent aggregator, offering
-unparalleled integration with a multitude of torrent platforms through a single,
-unified interface. This tool is indispensable for those seeking to streamline
-their torrent search process across various sources. Leveraging Jackett, users
-can effortlessly enhance their torrenting workflow, making it an essential
-addition to any Arch Linux environment known for its cutting-edge and
-customizable nature.
+Jackett is an emerging and supported open source torrent aggregator. It offers
+convenient integration with multiple programs through a single API. This tool
+is indispensable for those who want to simplify the process of searching
+torrents from various sources. Using Jackett, users can easily facilitate the
+process of searching dozens of trackers simultaneously, making it indispensable
+for someone who doesn't want to waste their time. 
 
 ### Prerequisites
 
 Before proceeding with the Jackett installation on Arch Linux, ensure your
 system meets the following requirements:
 - Arch Linux system with up-to-date packages
-- Sudo privileges or access to the root user
+- Access to the root user (`sudo`, `doas`, ...)
 - An active internet connection
 
 ### Installation Process
 
-Arch Linux's philosophy of simplicity and user empowerment is reflected in the
-ease of installing software like Jackett through the Arch User Repository (AUR)
-or the Chaotic-AUR, a community-driven repository known for its pre-built
-packages that provide convenience and efficiency in software management.
+There are two ways to install Jacket. To install Jacket on Arch Linux and
+Arch-based distros, you can use either the AUR or the Chaotic repository.
 
 1. **Installing Jackett from the AUR:**
 
-With `yay`, `paru`, `trizen` or any AUR helper installed, proceed to install
-Jackett by running:
+   With `yay`, `paru`, `trizen` or any other AUR helper installed, proceed to install
+   Jackett by running:
 
    ```bash
-   yay -S jackett
+   yay -Syu jackett
    ```
 
    This command fetches and installs Jackett, handling dependencies
@@ -62,17 +57,15 @@ Jackett by running:
 
 2. **Alternative Installation via Chaotic-AUR:**
 
-   For users preferring the Chaotic-AUR, which offers a wide array of pre-built
-   packages, adding the Chaotic-AUR repository to your system is required. This
-   can be achieved by editing the `/etc/pacman.conf` file and appending the
-   repository details. Detailed instructions on adding the Chaotic-AUR can be
+   You can also install `Jackett` via Chaotic-AUR.
+   Detailed instructions on adding the Chaotic-AUR can be
    found on its official website or the Arch Linux wiki.
 
    Once the repository is set up, install Jackett using the following pacman
    command:
 
    ```bash
-   sudo pacman -Sy jackett
+   sudo pacman -Syu jackett
    ```
 
 ### Post-Installation Configuration
@@ -83,23 +76,25 @@ Jackett remains active, ready to manage your torrent searches efficiently.
 
 - **Enabling and Starting the Jackett Service:**
 
-   To have Jackett start automatically at boot and immediately after
-   installation, enable and start the systemd service by executing:
+To have Jackett start automatically at boot and immediately after
+installation, enable and start the systemd service by executing:
 
    ```bash
    sudo systemctl enable --now jackett
    ```
 
-   This command activates the Jackett service and ensures its automatic startup
-   in future system reboots, offering a hassle-free user experience.
+This command activates the Jackett service and ensures its automatic startup
+in future system reboots, offering a hassle-free user experience.
 
 ### Verifying the Installation
 
 Verify that Jackett is running correctly by accessing its web interface through
-your preferred web browser. Navigate to `http://localhost:9117/UI/Dashboard` to
+your preferred web browser. Navigate to `http://localhost:9117` to
 open the Jackett dashboard, where you can begin configuring your torrent sources
 and preferences. You should see this dashboard (without predefined trackers
-though): ![jackett dashboard](img/jackett_indexers.webp)
+though):
+
+![jackett dashboard](img/jackett_indexers.webp)
 
 ## Customizing Jackett
 
@@ -161,12 +156,12 @@ Encountering errors during the testing phase? Two primary avenues exist for
 resolution:
 
 1. **Adjusting Tracker URLs:** If a tracker exhibit issues, attempt to modify
-its URL by clicking the wrench icon adjacent to the problematic tracker. This
+its URL by clicking the wrench icon next to the problematic tracker. This
 interface often lists alternative mirrors, obviating the need for manual search:
 
 ![tracker settings](img/tracker_settings_jackett.webp)
 
-2. **Leveraging Proxy Services:** Utilizing proxy services can circumvent
+2. **Using Proxy Services:** Utilizing proxy services can circumvent
 tracker accessibility issues. Arch Linux users can integrate SOCKS5 or HTTP
 proxies using tools like `xray` or `v2ray`, complemented by user-friendly
 frontends such as `v2raya` or `nekoray`. For proxy lists, resources like
@@ -178,17 +173,13 @@ Dashboard:
 
 ## Enhancing Torrent Management and Streaming on Arch Linux with Jackett, qbittorrent, and btstrm
 
-In the realm of torrent management and media consumption, the integration of
-Jackett with qbittorrent and the utilization of btstrm for direct streaming
-represent a pinnacle of efficiency and convenience. This trio of tools offers a
-robust solution for accessing, downloading, and streaming media content from
-various torrent sources, all within a unified ecosystem that eschews the need
-for bloated "Media Server" software.
+Now you set up your own torrent indexer. Let's connect it to various
+torrent software. In this guide, we'll cover `qBittorrent` and `btstrm`
 
-### A) Seamlessly Integrating qbittorrent with Jackett
+### A) Integrating Jackett into qbittorrent
 
 Jackett's compatibility extends beyond traditional "Media Server" applications
-to include native torrent clients like qbittorrent, renowned for its lightweight
+to include native torrent clients like `qBittorrent`, renowned for its lightweight
 footprint and rich feature set. Here's how to integrate these tools:
 
 1. **Installation of qbittorrent:**
@@ -203,7 +194,7 @@ footprint and rich feature set. Here's how to integrate these tools:
    Ensure that your system is up-to-date to avoid any potential dependency
    issues during the installation.
 
-3. **Configuring the Jackett Plugin for qbittorrent:**
+2. **Configuring the Jackett Plugin for qbittorrent:**
 
    The integration process involves configuring qbittorrent to utilize Jackett
    for an enhanced search experience across multiple torrent sources. Detailed
@@ -243,13 +234,49 @@ media from torrents, eliminating the need for full downloads.
    ```bash
    pipx install btstrm
    ```
+2. **Installing dependencies**:
 
-3. **Utilizing btstrm for Streaming:**
+   Before using btstrm, ensure that you have the following dependencies installed:
 
-   With btstrm installed, you can now stream media from torrents directly. This
-   method is not only efficient but also bypasses the need for significant local
-   storage, aligning with the minimalist philosophy embraced by many Arch Linux
-   users.
+   ```
+   mpv
+   btfs
+   fzf
+   chafa
+   ```
+
+   You can install them by running:
+
+   ```bash
+   sudo pacman -Syu --needed mpv btfs fzf chafa
+   ```
+   
+   `impd` is optional dependency, but it is [highly recommended for language
+   learners](https://tatsumoto-ren.github.io/blog/passive-immersion.html).
+
+   Another optional dependency is [osd](https://github.com/druidamix/Opensubtitles-downloader) - `btstrm`
+   uses it to download subs from opensubtitles with `-s` flag.
+
+3. **Config editing:**
+
+   After installing `btstrm` and dependencies, run btstrm once - it will create config
+   file `btstrm.conf` in `~/.config` directory. Or you may add it manually:
+
+   ```
+   [DEFAULT]
+   LANG = es-ES
+   JACKETT_API_KEY = your_jackett_api_key
+   JACKETT_URL = http://127.0.0.1:9117
+   TIMEOUT=30
+   REMOVE_PLAYED_FROM_LIST = True
+   ```
+
+5. **Using btstrm for Streaming:**
+
+   With btstrm installed, you can now stream media from torrents directly. Just
+   run it as `btstrm "shingeki no kyojin"` or smth like that.
+   Refer to [README](https://github.com/asakura42/btstrm#btstrm---bittorrent-streaming-program)
+   for further instructions.
 
 ## Comparison Between Various Torrent-based Software
 
@@ -288,10 +315,10 @@ the complexities of streaming or media management.
 
 ## Conclusion
 
-Concluding from the comparison above, the combination of `Jackett` with `btstrm`
+Concluding from the comparison above, the combination of `Jackett` with `qbittorrent` and `btstrm`
 emerges as an exceptionally streamlined and efficient solution for users aiming
 to search and stream torrents, particularly those with a focus on language
-learning. This duo leverages the robust torrent search capabilities of
+learning. This trio leverages the robust torrent search capabilities of
 `Jackett`, integrating seamlessly with btstrm's direct streaming functionality,
 to offer a compelling user experience that is both powerful and user-friendly.
 
@@ -313,20 +340,6 @@ feature is invaluable for learners looking to immerse themselves in their target
 language through media. The **automatic subtitle searching** functionality using
 `osd` via opensubtitles further complements this by easing the acquisition of
 necessary language subtitles, thereby enriching the learning experience.
-
-When compared to other options like `WebTorrent`, traditional media servers, or
-the straightforward downloading of content, the `Jackett` and `btstrm` or
-`qBittorrent` combination offers unparalleled convenience and efficiency. Unlike
-the more cumbersome setup and management of a media server or the less
-integrated experience of `WebTorrent` and traditional downloading, Jackett and
-btstrm provide a focused, lightweight solution that respects the user's need for
-quick access to a wide array of content with minimal setup.
-
-For Arch Linux users, in particular, who value software that is both powerful
-and respectful of their system's resources, the `Jackett` and `btstrm` or
-`qBittorrent` combo aligns perfectly with their preferences. It is a testament
-to the Arch Linux philosophy of simplicity and effectiveness, wrapped up in a
-package that serves both the torrent enthusiast and the language learner alike.
 
 In summary, for those in the pursuit of an easy, efficient way to search and
 stream torrents, especially with an eye towards language learning, the synergy
