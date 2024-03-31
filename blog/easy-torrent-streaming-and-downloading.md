@@ -22,7 +22,7 @@ torrents - `btstrm`.
 
 ## Installing Jackett
 
-Jackett is an emerging and supported open source torrent aggregator. It offers
+[https://github.com/Jackett/Jackett](Jackett) is an emerging and supported open source torrent aggregator. It offers
 convenient integration with multiple programs through a single API. This tool
 is indispensable for those who want to simplify the process of searching
 torrents from various sources. Using Jackett, users can easily facilitate the
@@ -76,15 +76,15 @@ Jackett remains active, ready to manage your torrent searches efficiently.
 
 - **Enabling and Starting the Jackett Service:**
 
-To have Jackett start automatically at boot and immediately after
-installation, enable and start the systemd service by executing:
+   To have Jackett start automatically at boot and immediately after
+   installation, enable and start the systemd service by executing:
 
    ```bash
    sudo systemctl enable --now jackett
    ```
 
-This command activates the Jackett service and ensures its automatic startup
-in future system reboots, offering a hassle-free user experience.
+   This command activates the Jackett service and ensures its automatic startup
+   in future system reboots, offering a hassle-free user experience.
 
 ### Verifying the Installation
 
