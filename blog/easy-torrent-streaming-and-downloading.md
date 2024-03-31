@@ -98,7 +98,7 @@ Verify that Jackett is running correctly by accessing its web interface through
 your preferred web browser. Navigate to `http://localhost:9117/UI/Dashboard` to
 open the Jackett dashboard, where you can begin configuring your torrent sources
 and preferences. You should see this dashboard (without predefined trackers
-though): ![jackett dashboard](https://files.catbox.moe/gzg1qt.png)
+though): ![jackett dashboard](img/jackett_indexers.webp)
 
 ## Customizing Jackett
 
@@ -122,7 +122,7 @@ on the `+ Add Indexer` button. This action reveals a comprehensive list of
 supported torrent indexers, reflecting a wide array of content preferences and
 needs:
    
-![add indexers button](https://files.catbox.moe/ynon0k.png)
+![add indexers button](img/add_indexer_jackett.webp)
 
 2. **Selection of Preferred Indexers:** From the presented list, select the
 torrent indexers (websites that collect torrent metadata) you wish to add.
@@ -141,7 +141,7 @@ Jackett supports a diverse selection, including, but not limited to:
 
 Author of this article learns Spanish, so he uses these trackers:
 
-![authors trackers](https://files.catbox.moe/offihp.png)
+![authors trackers](img/list_of_trackers.webp)
 
 ### Ensuring Indexer Functionality
 
@@ -152,7 +152,7 @@ operational status:
   trackers. This process identifies any trackers facing connectivity or
   functionality issues:
 
-![test all button](https://files.catbox.moe/gonjhf.png)
+![test all button](img/test_all_jackett.webp)
 
 ### Troubleshooting Tracker Issues
 
@@ -163,7 +163,7 @@ resolution:
 its URL by clicking the wrench icon adjacent to the problematic tracker. This
 interface often lists alternative mirrors, obviating the need for manual search:
    
-![tracker settings](https://files.catbox.moe/xyv44z.png)
+![tracker settings](img/tracker_settings_jackett.webp)
 
 2. **Leveraging Proxy Services:** Utilizing proxy services can circumvent
 tracker accessibility issues. Arch Linux users can integrate SOCKS5 or HTTP
@@ -173,10 +173,9 @@ frontends such as `v2raya` or `nekoray`. For proxy lists, resources like
 valuable assistance. You can set up your proxy at the bottom of the Jackett's
 Dashboard:
    
-![proxy set up](https://files.catbox.moe/qduy5o.png)
+![proxy set up](img/proxy_jackett.webp)
 
-## Enhancing Torrent Management and Streaming on Arch Linux with Jackett,
-qbittorrent, and btstrm
+## Enhancing Torrent Management and Streaming on Arch Linux with Jackett, qbittorrent, and btstrm
 
 In the realm of torrent management and media consumption, the integration of
 Jackett with qbittorrent and the utilization of btstrm for direct streaming
@@ -219,7 +218,7 @@ footprint and rich feature set. Here's how to integrate these tools:
 After all, you may search all defined trackers via the `Search` ability of
 `qBittorrent`:
 
-![qb search](https://files.catbox.moe/ggf2bg.png)
+![qb search](img/qbittorrent_jackett.webp)
 
 ### B) Direct Streaming with btstrm
 
