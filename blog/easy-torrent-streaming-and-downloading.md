@@ -39,7 +39,7 @@ system meets the following requirements:
 
 ### Installation Process
 
-There are two ways to install Jacket. To install Jacket on Arch Linux and
+There are two ways to install Jackett. To install Jackett on Arch Linux and
 Arch-based distros, you can use either the AUR or the Chaotic repository.
 
 1. **Installing Jackett from the AUR:**
