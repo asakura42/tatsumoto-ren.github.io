@@ -11,6 +11,8 @@ with torrents with the help of the `Jackett` aggregator,
 the open source torrent client `qBittorrent`
 and `btstrm`, the program for directly streaming torrents.
 
+****
+
 ## Rationale
 
 Despite the fact that many people are aware of BitTorrent technology,
