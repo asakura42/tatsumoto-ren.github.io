@@ -272,10 +272,11 @@ media from torrents, eliminating the need for full downloads.
    sudo pacman -Syu --needed mpv btfs fzf chafa
    ```
 
-   `impd` is optional dependency, but it is [highly recommended for language
-   learners](https://tatsumoto-ren.github.io/blog/passive-immersion.html).
+   [impd](passive-listening.html#impd) is optional dependency,
+   but it is [highly recommended for language learners](passive-immersion.html).
 
-   Another optional dependency is [osd](https://github.com/druidamix/Opensubtitles-downloader) - `btstrm`
+   Another optional dependency is
+   [osd](https://github.com/druidamix/Opensubtitles-downloader) - `btstrm`
    uses it to download subs from opensubtitles with `-s` flag.
 
 3. **Config editing:**
