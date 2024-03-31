@@ -33,109 +33,115 @@ What if you reduce them to just three &mdash
 open the program, enter the title, press Enter.
 Let's explore how.
 
+## Jackett
+
+[Jackett](https://github.com/Jackett/Jackett)
+is a free/libre torrent aggregator.
+It offers convenient integration with multiple programs through a single API.
+This tool is indispensable for those who want to simplify the process
+of searching torrents from various sources.
+Using Jackett,
+users can easily facilitate the process of searching dozens of trackers simultaneously,
+making it essential for someone who doesn't want to waste their time.
+
 ## Installing Jackett
 
-[https://github.com/Jackett/Jackett](Jackett) is an emerging and supported open source torrent aggregator. It offers
-convenient integration with multiple programs through a single API. This tool
-is indispensable for those who want to simplify the process of searching
-torrents from various sources. Using Jackett, users can easily facilitate the
-process of searching dozens of trackers simultaneously, making it indispensable
-for someone who doesn't want to waste their time.
+Before proceeding with the Jackett installation,
+ensure your system meets the following requirements:
 
-### Prerequisites
+- Arch Linux or Arch-based system (Manjaro, EndeavorOS, etc.) with up-to-date packages.
+- Access to the root user (`sudo`, `doas`, etc.).
+- An active internet connection.
 
-Before proceeding with the Jackett installation on Arch Linux, ensure your
-system meets the following requirements:
-- Arch Linux system with up-to-date packages
-- Access to the root user (`sudo`, `doas`, ...)
-- An active internet connection
+There are two ways to install Jackett.
+You can use either the AUR or the Chaotic repository.
 
-### Installation Process
+### Installing Jackett from the AUR
 
-There are two ways to install Jackett. To install Jackett on Arch Linux and
-Arch-based distros, you can use either the AUR or the Chaotic repository.
+With `yay`, `paru`, `trizen` or any other AUR helper installed,
+proceed to install Jackett by running:
 
-1. **Installing Jackett from the AUR:**
+```bash
+yay -Syu jackett
+```
 
-   With `yay`, `paru`, `trizen` or any other AUR helper installed, proceed to install
-   Jackett by running:
+This command fetches and installs Jackett,
+handling dependencies automatically.
+During the installation process,
+you may be prompted to review the package details and confirm the installation steps.
 
-   ```bash
-   yay -Syu jackett
-   ```
+### Installing Jackett from Chaotic-AUR
 
-   This command fetches and installs Jackett, handling dependencies
-   automatically. During the installation process, you may be prompted to review
-   the package details and confirm the installation steps.
+You can also install `Jackett` via Chaotic-AUR.
+Detailed instructions on adding the Chaotic-AUR can be
+found on its [official website](https://aur.chaotic.cx/) or the Arch Linux wiki.
 
-2. **Alternative Installation via Chaotic-AUR:**
+Once the repository is set up,
+install Jackett using the following pacman command:
 
-   You can also install `Jackett` via Chaotic-AUR.
-   Detailed instructions on adding the Chaotic-AUR can be
-   found on its official website or the Arch Linux wiki.
+```bash
+sudo pacman -Syu jackett
+```
 
-   Once the repository is set up, install Jackett using the following pacman
-   command:
+## Configuration
 
-   ```bash
-   sudo pacman -Syu jackett
-   ```
+Upon successful installation, it's crucial to configure Jackett
+to run as a background service using systemd.
+This ensures Jackett remains active,
+ready to manage your torrent searches efficiently.
 
-### Post-Installation Configuration
+To run Jackett
+and have it start automatically at boot
+enable and start the systemd service by executing:
 
-Upon successful installation, it's crucial to configure Jackett to run as a
-background service using systemd, Arch Linux's default init system. This ensures
-Jackett remains active, ready to manage your torrent searches efficiently.
+```bash
+sudo systemctl enable --now jackett
+```
 
-- **Enabling and Starting the Jackett Service:**
-
-   To have Jackett start automatically at boot and immediately after
-   installation, enable and start the systemd service by executing:
-
-   ```bash
-   sudo systemctl enable --now jackett
-   ```
-
-   This command activates the Jackett service and ensures its automatic startup
-   in future system reboots, offering a hassle-free user experience.
+This command activates the Jackett service
+and ensures its automatic startup in future system reboots,
+offering a hassle-free user experience.
 
 ### Verifying the Installation
 
-Verify that Jackett is running correctly by accessing its web interface through
-your preferred web browser. Navigate to `http://localhost:9117` to
-open the Jackett dashboard, where you can begin configuring your torrent sources
-and preferences. You should see this dashboard (without predefined trackers
-though):
+Verify that Jackett is running correctly
+by accessing its web interface through your preferred web browser.
+Navigate to http://localhost:9117 to open the Jackett dashboard,
+where you can begin configuring your torrent sources and preferences.
+You should see this dashboard (without predefined trackers though):
 
 ![jackett dashboard](img/jackett_indexers.webp)
 
-## Customizing Jackett
+### Customizing Jackett
 
-Before you start using Jackett, you should add some trackers to it. This part of
-the article will cover the main ones and explain which ones you should add
-first.
+Before you start using Jackett,
+you should add some trackers to it.
+This part of the article will cover the main ones
+and explain which ones you should add first.
 
 ### Accessing Jackett's User Interface
 
-Initiate by accessing the Jackett web interface. This is accomplished by
-navigating to `localhost:9117` in your web browser. Here, Jackett's dashboard
-presents a user-friendly environment for managing your torrent indexers.
+Open the Jackett web interface.
+This is accomplished by navigating to http://localhost:9117 in your web browser.
+Here, Jackett's dashboard presents a user-friendly environment for managing your torrent indexers.
 
 ### Adding New Torrent Indexers
 
-To extend your search capabilities, Jackett allows for the easy addition of new
-torrent indexers:
+To extend your search capabilities,
+Jackett allows for the easy addition of new torrent indexers:
 
-1. **Navigating to Indexer Addition:** Within the Jackett UI, locate and click
-on the `+ Add Indexer` button. This action reveals a comprehensive list of
-supported torrent indexers, reflecting a wide array of content preferences and
-needs:
+1. **Navigating to Indexer Addition**.
+   Within the Jackett UI,
+   locate and click on the `+ Add Indexer` button.
+   This action reveals a comprehensive list of supported torrent indexers,
+   reflecting a wide array of content preferences and needs:
 
-![add indexers button](img/add_indexer_jackett.webp)
+   ![add indexers button](img/add_indexer_jackett.webp)
 
-2. **Selection of Preferred Indexers:** From the presented list, select the
-torrent indexers (websites that collect torrent metadata) you wish to add.
-Jackett supports a diverse selection, including, but not limited to:
+2. **Selection of Preferred Indexers**.
+   From the presented list, select the
+   torrent indexers (websites that collect torrent metadata) you wish to add.
+   Jackett supports a diverse selection, including, but not limited to:
 
    ```
    BTMET, BTSOW, Knaben, LimeTorrents, Torrent Downloads, Torrent[CORE],
@@ -148,18 +154,18 @@ Jackett supports a diverse selection, including, but not limited to:
    Nyaa.si, JPTV, AnimeBytes, AnimeTosho, Jpopsuki, ...
    ```
 
-Author of this article learns Spanish, so he uses these trackers:
+   Author of this article learns Spanish, so he uses these trackers:
 
-![authors trackers](img/list_of_trackers.webp)
+   ![authors trackers](img/list_of_trackers.webp)
 
 ### Ensuring Indexer Functionality
 
-After the addition of your chosen trackers, it is paramount to verify their
-operational status:
+After the addition of your chosen trackers,
+it is paramount to verify their operational status:
 
-- Click on the `Test All` button to initiate a comprehensive test of all added
-  trackers. This process identifies any trackers facing connectivity or
-  functionality issues:
+Click on the `Test All` button to initiate a comprehensive test of all added
+trackers. This process identifies any trackers facing connectivity or
+functionality issues:
 
 ![test all button](img/test_all_jackett.webp)
 
@@ -168,26 +174,28 @@ operational status:
 Encountering errors during the testing phase? Two primary avenues exist for
 resolution:
 
-1. **Adjusting Tracker URLs:** If a tracker exhibit issues, attempt to modify
-its URL by clicking the wrench icon next to the problematic tracker. This
-interface often lists alternative mirrors, obviating the need for manual search:
+1. **Adjusting Tracker URLs**. If a tracker exhibit issues, attempt to modify
+   its URL by clicking the wrench icon next to the problematic tracker. This
+   interface often lists alternative mirrors, obviating the need for manual search:
 
-![tracker settings](img/tracker_settings_jackett.webp)
+   ![tracker settings](img/tracker_settings_jackett.webp)
 
-2. **Using Proxy Services:** Utilizing proxy services can circumvent
-tracker accessibility issues. Arch Linux users can integrate SOCKS5 or HTTP
-proxies using tools like `xray` or `v2ray`, complemented by user-friendly
-frontends such as `v2raya` or `nekoray`. For proxy lists, resources like
-[**https://github.com/asakura42/vss**](https://github.com/asakura42/vss) provide
-valuable assistance. You can set up your proxy at the bottom of the Jackett's
-Dashboard:
+2. **Using Proxy Services**. Utilizing proxy services can circumvent
+   tracker accessibility issues. Arch Linux users can integrate SOCKS5 or HTTP
+   proxies using tools like `xray` or `v2ray`, complemented by user-friendly
+   frontends such as `v2raya` or `nekoray`.
+   Nekoray can be [installed from the AUR](https://aur.archlinux.org/packages/nekoray).
+   Afterwards,
+   use resources like [asakura42/vss](https://github.com/asakura42/vss) to find proxy lists.
+   You can set up your proxy at the bottom of the Jackett's Dashboard:
 
-![proxy set up](img/proxy_jackett.webp)
+   ![proxy set up](img/proxy_jackett.webp)
 
-## Enhancing Torrent Management and Streaming on Arch Linux with Jackett, qbittorrent, and btstrm
+## Enhancing Torrent Management and Streaming
 
-Now you set up your own torrent indexer. Let's connect it to various
-torrent software. In this guide, we'll cover `qBittorrent` and `btstrm`
+Now you set up your own torrent indexer.
+Let's connect it to various torrent software.
+In this guide, we'll cover `qBittorrent` and `btstrm`.
 
 ### A) Integrating Jackett into qbittorrent
 
