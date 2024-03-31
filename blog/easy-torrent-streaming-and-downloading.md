@@ -1,24 +1,35 @@
 ---
-title: Easy Torrent Streaming and Downloading for (not only) Language Learning
+title: Easy Torrent Streaming and Downloading
 date: 1711892025
 tags: ['guide']
 filename: easy-torrent-streaming-and-downloading
 author: asakura42
 ---
 
-Despite the fact that many modern operating system users are aware of
-BitTorrent technology, not every one of them makes optimal use of the
-opportunities provided. Imagine: a user was told about a certain movie and went
-looking for it on torrent trackers. After looking through 5 pages in the
-search engine, the user finds the right movie in the right quality. He downloads
-the torrent file, switches the window of his favorite bloatTorrent, looks at ads, pastes the link in the window,
-selects the desired folder and waits. Half an hour waits, an hour waits,
-finally the movie is downloaded and the user turns it on. Notice how many
-actions there are? What if you reduce them to just three - open the program,
-enter the title, press Enter. This article is dedicated to exactly that -
-simplifying the work with torrents with the help of the `Jackett` aggregator, the
-open source torrent client `qBittorrent` and the program for directly streaming
-torrents - `btstrm`.
+This article is about how to simplify the work
+with torrents with the help of the `Jackett` aggregator,
+the open source torrent client `qBittorrent`
+and `btstrm`, the program for directly streaming torrents.
+
+## Rationale
+
+Despite the fact that many people are aware of BitTorrent technology,
+they rarely make optimal use of the opportunities provided.
+Let's say a person wants to download a certain movie and goes looking for it on torrent trackers.
+After looking through 5 pages in the search engine,
+the user finds the right movie in the right quality.
+He downloads the torrent file,
+switches the window of his favorite torrent client,
+looks at ads,
+pastes the link in the window,
+selects the desired folder and waits.
+Half an hour waits,
+an hour waits,
+finally the movie is downloaded and the user turns it on.
+Notice how many actions there are?
+What if you reduce them to just three &mdash
+open the program, enter the title, press Enter.
+Let's explore how.
 
 ## Installing Jackett
 
@@ -27,7 +38,7 @@ convenient integration with multiple programs through a single API. This tool
 is indispensable for those who want to simplify the process of searching
 torrents from various sources. Using Jackett, users can easily facilitate the
 process of searching dozens of trackers simultaneously, making it indispensable
-for someone who doesn't want to waste their time. 
+for someone who doesn't want to waste their time.
 
 ### Prerequisites
 
@@ -250,7 +261,7 @@ media from torrents, eliminating the need for full downloads.
    ```bash
    sudo pacman -Syu --needed mpv btfs fzf chafa
    ```
-   
+
    `impd` is optional dependency, but it is [highly recommended for language
    learners](https://tatsumoto-ren.github.io/blog/passive-immersion.html).
 
