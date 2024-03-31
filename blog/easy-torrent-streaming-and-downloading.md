@@ -3,6 +3,7 @@ title: Easy Torrent Streaming and Downloading for (not only) Language Learning
 date: 1711892025
 tags: ['guide']
 filename: easy-torrent-streaming-and-downloading
+author: asakura42
 ---
 
 In the digital age, the quest for efficient, streamlined access to media and
@@ -121,7 +122,7 @@ torrent indexers:
 on the `+ Add Indexer` button. This action reveals a comprehensive list of
 supported torrent indexers, reflecting a wide array of content preferences and
 needs:
-   
+
 ![add indexers button](img/add_indexer_jackett.webp)
 
 2. **Selection of Preferred Indexers:** From the presented list, select the
@@ -162,7 +163,7 @@ resolution:
 1. **Adjusting Tracker URLs:** If a tracker exhibit issues, attempt to modify
 its URL by clicking the wrench icon adjacent to the problematic tracker. This
 interface often lists alternative mirrors, obviating the need for manual search:
-   
+
 ![tracker settings](img/tracker_settings_jackett.webp)
 
 2. **Leveraging Proxy Services:** Utilizing proxy services can circumvent
@@ -172,7 +173,7 @@ frontends such as `v2raya` or `nekoray`. For proxy lists, resources like
 [**https://github.com/asakura42/vss**](https://github.com/asakura42/vss) provide
 valuable assistance. You can set up your proxy at the bottom of the Jackett's
 Dashboard:
-   
+
 ![proxy set up](img/proxy_jackett.webp)
 
 ## Enhancing Torrent Management and Streaming on Arch Linux with Jackett, qbittorrent, and btstrm
@@ -333,4 +334,3 @@ between `Jackett` and `btstrm` or `qBittorrent` is unbeatable. It not only
 simplifies the process of finding and accessing content but does so in a way
 that enriches the user's learning experience, making it the optimal choice in a
 landscape of more complex or less integrated solutions.
-
